@@ -1,0 +1,19 @@
+{
+    "name": "Machu Picchu Availability",
+    "short_name": "Machupicchuavailability",
+    "description": "Check availability of tickets for Machu Picchu, the Inca Trail, Salkantay and other destinations. Plan your visit and book in advance.",
+    "lang": "en-US",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#005d5d",
+    "orientation": "portrait",
+    "icons": [
+      {
+        "src": "/favicon.ico",
+        "sizes": "48x48 72x72 96x96 128x128 256x256",
+        "type": "image/x-icon"
+      }
+    ]
+}
+  

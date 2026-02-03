@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  
+  font-family:'Oswald', Arial, Helvetica, sans-serif;
+}
+@keyframes moveDownDisappear {
+  0% {
+    transform: translateY(0); /* Comienza en la posición inicial */
+    opacity: 1; /* Totalmente visible */
+  }
+  100% {
+    transform: translateY(40px); /* Mueve el ícono hacia abajo */
+    opacity: 0; /* Desvanece el ícono */
+  }
+}
+
+@keyframes whatsappPulse {
+  0%,
+  66%,
+  100% {
+    transform: scale(1);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
+  }
+  75% {
+    transform: scale(1.08);
+    box-shadow: 0 12px 28px rgba(37, 211, 102, 0.35);
+  }
+  82% {
+    transform: scale(1);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
+  }
+}
+
+/* Tamaños de fuente para diferentes encabezados y párrafos */
+h1 {
+  @apply text-4xl font-bold;
+}
+
+h2 {
+  @apply text-2xl mb-8 font-semibold text-gray-800;
+}
+
+h3 {
+  @apply text-xl mb-6 font-semibold text-[#005249];
+}
+
+h4 {
+  @apply text-lg mb-6 font-medium;
+}
+
+h5 {
+  @apply text-sm mb-6 font-medium;
+}
+
+p {
+  @apply text-base mb-6 leading-relaxed text-gray-600;
+}
+
+/* Añadir una transición para el color cuando cambie el esquema de color */
+* {
+  transition: background-color 0.3s, color 0.3s;
+}

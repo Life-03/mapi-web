@@ -1,0 +1,53 @@
+services:
+  web:
+    build:
+      context: ./web
+      dockerfile: Dockerfile
+    init: true
+    restart: unless-stopped
+    env_file:
+      - ./web/.env
+    environment:
+      - NODE_ENV=production
+    read_only: true
+    tmpfs:
+      - /tmp
+      - /app/.next/cache:rw,nosuid,nodev,uid=1000,gid=1000,mode=0755
+    expose:
+      - "3000"
+    networks:
+      edge:
+        aliases:
+          - web
+
+  api:
+    build:
+      context: ./api
+      dockerfile: Dockerfile
+      args:
+        ENABLE_PUPPETEER: "${ENABLE_PUPPETEER:-0}"
+    init: true
+    restart: unless-stopped
+    env_file:
+      - ./api/.env
+    environment:
+      - NODE_ENV=production
+      - HOME=/home/node/puppeteer_profile
+      - XDG_CONFIG_HOME=/home/node/puppeteer_profile/.config
+      - XDG_CACHE_HOME=/home/node/puppeteer_profile/.cache
+      - PUPPETEER_CACHE_DIR=/app/.cache/puppeteer
+    shm_size: "1gb"
+    read_only: true
+    tmpfs:
+      - /tmp:rw,exec,nosuid,nodev
+      - /home/node/puppeteer_profile:rw,exec,nosuid,nodev,uid=1000,gid=1000,mode=0755
+    expose:
+      - "4000"
+    networks:
+      edge:
+        aliases:
+          - api
+
+networks:
+  edge:
+    external: true
