@@ -103,3 +103,16 @@ Este archivo registra, en orden cronológico, los cambios técnicos y decisiones
 - **Admin / Auth:** ✓ `/signin` y cookies admin funcionando; ✓ endpoints admin verificados.
 - **SEO técnico:** ✓ sitemap dinámico, ✓ metadata base, ✓ canonical/lang en rutas clave.
 - **Contenido tours (DB):** ⚠️ pendiente reescritura editorial final (ES/EN), sin repeticiones, longitud adecuada.
+
+---
+
+## 2026-02-03 — Documentación / Env
+
+- **Contexto:** Faltaba plantilla de variables de entorno.
+- **Cambios:**
+  - Se añadieron `.env.example` en raíz, `api/` y `web/`.
+- **Archivos:**
+  - `.env.example`
+  - `api/.env.example`
+  - `web/.env.example`
+- **Resultado:** Plantillas listas para nuevos entornos.
