@@ -116,3 +116,11 @@ Este archivo registra, en orden cronológico, los cambios técnicos y decisiones
   - `api/.env.example`
   - `web/.env.example`
 - **Resultado:** Plantillas listas para nuevos entornos.
+
+---
+
+## 2026-02-03 — Git
+
+- **Contexto:** `.env.example` estaba siendo ignorado por `.gitignore`.
+- **Cambios:** Se agregó excepción para versionar `.env.example`.
+- **Archivo:** `.gitignore`
